@@ -337,14 +337,14 @@ if ($total <= $brp) {
     $kgid = regis($mail2, $nope, $anama, $bnama, $i);
     $createmail = createmail("$kcl2$b");
     if ($createmail[0] == true) {
-        echo "Berhasil membuat email temp => $createmail[1]\n";
+        // echo "Berhasil membuat email temp => $createmail[1]\n";
         $gettoken = gettoken($mail2);
         if ($gettoken[0] == true) {
             $token = $gettoken[1];
-            echo "Berhasil Mengambil token => $token\n";
+            // echo "Berhasil Mengambil token => $token\n";
             $sendotp = sendotp($createmail[1], $token);
             if ($sendotp == true) {
-                echo "Berhasil kirim otp ke email \n";
+                //echo "Berhasil kirim otp ke email \n";
                 ulangotp:
                 if ($ulangotp <= 10) {
                     $verivemail = verivemail($createmail[1]);
@@ -352,7 +352,7 @@ if ($total <= $brp) {
                         $otp = $verivemail[1];
                         $verifotp = verifotp($createmail[1], $otp, $token);
                         if ($verifotp == true) {
-                            echo "Succses verif email => $createmail[1] \n";
+                            echo "$total. Berhasil => $anama $bnama | $nope | $kgid\n";
                             echo "\n";
                             $result = "$anama $bnama | $nope | $createmail[1] | $kgid \n";
                             save("hasil.txt", $result);
