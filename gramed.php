@@ -270,8 +270,7 @@ function nope()
     $nope7 = rand(0, 9);
     $nope8 = rand(0, 9);
     $nope9 = rand(0, 9);
-    $nope10 = rand(0, 9);
-    $nope = "+6289$nope1$nope2$nope3$nope4$nope5$nope6$nope7$nope8$nope9$nope10";
+    $nope = "+6289$nope1$nope2$nope3$nope4$nope5$nope6$nope7$nope8$nope9";
     return $nope;
 }
 
@@ -324,7 +323,7 @@ if ($total <= $brp) {
     $hslnama = explode("\n", str_replace("\r", "", $fgcnama));
     $count = count($hslnama);
 
-    $b = rand(0, 9999999);
+    $b = rand(0, 99);
     $anama = $hslnama[rand(0, $count)];
     $bnama = $hslnama[rand(0, $count)];
     $fullnama = "$anama $bnama";
